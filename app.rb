@@ -39,6 +39,7 @@ end
 
 get("/payment/results") do
   @user_APR_input = params.fetch("user_APR").to_f/100
+  @user_APR_input = @user_APR_input.round(4)
   @user_Years_input = params.fetch("user_Years").to_f
   @user_Principal_input = params.fetch("user_Principal").to_f
 
