@@ -38,7 +38,7 @@ get("/payment/new") do
 end
 
 get("/payment/results") do
-  @user_APR_input = params.fetch("user_APR").to_f
+  @user_APR_input = params.fetch("user_APR").to_f/100
   @user_Years_input = params.fetch("user_Years").to_f
   @user_Principal_input = params.fetch("user_Principal").to_f
 
@@ -46,6 +46,8 @@ get("/payment/results") do
   pmt_denom = 1-((1+@user_APR_input/12)**-(@user_Years_input*12))
 
   @user_payment_result = pmt_num/pmt_denom
+
+  @user_APR_input = @user_APR_input*100
 
   erb(:payment_results)
 end

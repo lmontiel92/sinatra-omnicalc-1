@@ -5,7 +5,7 @@
     APR
   </dt>
   <dd>
-    <%=@user_APR_input%>
+    <%=@user_APR_input.to_fs(:percentage)%>
   </dd>
 
   <dt>
@@ -19,14 +19,14 @@
     Principal
   </dt>
   <dd>
-    <%=@user_Principal_input%>
+    <%=@user_Principal_input.to_fs(:currency)%>
   </dd>
 
   <dt>
     Payment
   </dt>
   <dd>
-    <%=@user_payment_result%>
+    <%=@user_payment_result.to_fs(:currency)%>
   </dd>
 </dl>
 
