@@ -10,11 +10,12 @@ end
 
 get("/square/new") do
 
-  "hi"
   erb(:square_new)
 end
 
 get("/square/results") do
+  @user_square_input = params.fetch("user_number").to_f
+  @user_square_result = @user_square_input**2
 
-   erb(:square_results)
+  erb(:square_results)
 end
