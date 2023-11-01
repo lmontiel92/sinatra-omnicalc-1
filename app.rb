@@ -51,3 +51,17 @@ get("/payment/results") do
 
   erb(:payment_results)
 end
+
+#Beginning of random page logic
+
+get("/random/new") do
+  erb(:random_new)
+end
+
+get("/random/results") do
+  @user_random_max_input = params.fetch("user_max_number").to_f
+  @user_random_min_input = params.fetch("user_min_number").to_f
+  @user_random_result = rand(@user_random_min_input..@user_random_max_input)
+
+  erb(:random_results)
+end
